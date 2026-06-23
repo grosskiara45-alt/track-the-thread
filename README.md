@@ -4,9 +4,27 @@ Overview:
 As a knitter myself, taking notes while working through different patterns helps me keep track of my progress, remember which patterns I loved versus could improve, and more. This project addresses the need for an easily-accessible notes-taking application that considers different aspects of knitting/crocheting so that way, users can take notes on their creations.
 
 ## Features
+- Feature 1: Validate user input and either prevent the invalid input or inform the user about it (in all cases prevent invalid input from being stored or saved).
+- Feature 2: Persist important data to the user to local storage and make the stored data accessible in your app. (including after reload/refresh).
+- Feature 3: Analyze data that is stored in arrays, objects, sets or maps and display information about it in your app.
+
 ## Project Organization
+| Page | Description |
+|------|-------------|
+|**Landing Page**||
+|**Create Profile Page**||
+|**Dashboard Page**||
+|**Project Page**||
+|**About Page**||
+
 ## How to Run the Project
+
 ## Updates
 **06/15/2026**
 Created GitHub repositories and HTML files for each page of the website. Commented the general page architecture on each HTML file for future reference. Researched how to save users input values to local storage and make stored data accessible on the application.
+**06/17/2026**
+Added HTML Code to Welcome Page. Completed Project Plan and sent to mentor for review. Researched using local storage and anonymous accounts for saving users data. Researched Node.js and Express.js for permanently saving users data.
+**06/23/2025**
+Revised project plan before final submission on Subday. Worked on first draft of HTML code for all pages. Created JS files for dashboard, profile, and projects pages. Continued research on local storage.
+
 ## Credits

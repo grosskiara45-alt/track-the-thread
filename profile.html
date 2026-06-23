@@ -7,8 +7,52 @@
 </head>
 <body>
 <!-- Header with the text 'Create Profile' -->
+    <header>
+        <h1>Create Profile</h1>
+        <p>Please fill out required inputs to create your profile.</p>
+    </header>
 <!-- Form that includes the following fields: First Name, Last Name, Visual Preference, etc.-->
+    <main>
+        <form class="profile-form" id="profile-form">
+            <div class="form-section">
+                <label for="fname">First Name:</label><br>
+                <input type="text" id="fname" name="fname" size="40" placeholder="John" required><br>
+            </div>
+            
+            <div class="form-section">
+                <label for="lname">Last Name:</label><br>
+                <input type="text" id="lname" name="lname" size="40" placeholder="Doe" required><br>
+            </div>
+
+            <div class="form-section">
+                <label>Visual Preference:</label><br>
+                <input type="radio" id="light" name="light">
+                <label for="light">Light Mode</label>
+                <input type="radio" id="dark" name="dark">
+                <label for="light">Dark Mode</label>
+            </div>
+
+            <div class="submit-button">
+                <button onclick="saveProfile()">Submit</button>
+            </div> 
+        </form>
+    </main>
 <!-- Footer that includes all details required -->
-</body>
+    <footer>
+        <!-- Footer that includes all details required -->
+         <div class="footer-group">
+            <p>&copy; 2026 Kiara Gross.</p>
+            <p>Built with HTML, CSS, and JavaScript.</p>
+         </div>
+         <div class="footer-links">
+            <p>Let's Stay Connected!</p>
+            <ul>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Email</a></li>
+            </ul>
+         </div>
+    </footer>
+    <script src="public/js/profile.js"></script>
 </body>
 </html>
