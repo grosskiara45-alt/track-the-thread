@@ -1,58 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Profile</title>
-</head>
-<body>
-<!-- Header with the text 'Create Profile' -->
+  </head>
+  <body>
+    <!-- Header with the text 'Create Profile' -->
     <header>
-        <h1>Create Profile</h1>
-        <p>Please fill out required inputs to create your profile.</p>
+      <h1>Create Profile</h1>
+      <p>Please fill out inputs to create your profile.</p>
     </header>
-<!-- Form that includes the following fields: First Name, Last Name, Visual Preference, etc.-->
+    <!-- Form that includes the following fields: First Name, Last Name, Visual Preference, etc.-->
     <main>
-        <form class="profile-form" id="profile-form">
-            <div class="form-section">
-                <label for="fname">First Name:</label><br>
-                <input type="text" id="fname" name="fname" size="40" placeholder="John" required><br>
-            </div>
-            
-            <div class="form-section">
-                <label for="lname">Last Name:</label><br>
-                <input type="text" id="lname" name="lname" size="40" placeholder="Doe" required><br>
-            </div>
+      <form class="profile-form" id="profile-form">
+        <div>
+          <label for="fname">First Name:</label><br />
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            size="40"
+            placeholder="John"
+          /><br />
+          <span class="error-message" id="fnameError"></span>
+        </div>
 
-            <div class="form-section">
-                <label>Visual Preference:</label><br>
-                <input type="radio" id="light" name="light">
-                <label for="light">Light Mode</label>
-                <input type="radio" id="dark" name="dark">
-                <label for="light">Dark Mode</label>
-            </div>
+        <div class="form-section">
+          <label for="lname">Last Name:</label><br />
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            size="40"
+            placeholder="Doe"
+          /><br />
+          <span class="error-message" id="lnameError"></span>
+        </div>
 
-            <div class="submit-button">
-                <button onclick="saveProfile()">Submit</button>
-            </div> 
-        </form>
+        <div class="form-section" id="theme">
+          <label>Visual Preference:</label><br />
+          <input type="radio" id="light" name="theme" />
+          <label for="light">Light Mode</label>
+          <input type="radio" id="dark" name="theme" />
+          <label for="dark">Dark Mode</label>
+          <span class="error-message" id="themeError"></span>
+        </div>
+
+        <button type="submit" name="submit">Submit</button>
+        <button type="reset" name="reset">Reset</button>
+      </form>
     </main>
-<!-- Footer that includes all details required -->
+    <!-- Footer that includes all details  -->
     <footer>
-        <!-- Footer that includes all details required -->
-         <div class="footer-group">
-            <p>&copy; 2026 Kiara Gross.</p>
-            <p>Built with HTML, CSS, and JavaScript.</p>
-         </div>
-         <div class="footer-links">
-            <p>Let's Stay Connected!</p>
-            <ul>
-                <li><a href="#">GitHub</a></li>
-                <li><a href="#">LinkedIn</a></li>
-                <li><a href="#">Email</a></li>
-            </ul>
-         </div>
+      <div class="footer-group">
+        <p>&copy; 2026 Kiara Gross.</p>
+        <p>Built with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="footer-links">
+        <p>Let's Stay Connected!</p>
+        <ul>
+          <li><a href="https://github.com/grosskiara45-alt">GitHub</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/kiaragross/">LinkedIn</a>
+          </li>
+          <li>
+            <a href="mailto:grosskiara45@gmail.com">grosskiara45@gmail.com</a>
+          </li>
+        </ul>
+      </div>
     </footer>
     <script src="public/js/profile.js"></script>
-</body>
+  </body>
 </html>

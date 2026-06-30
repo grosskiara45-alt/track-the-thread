@@ -1,54 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard </title>
-</head>
-<body>
-<!-- Dashboard and Project tabs -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- Dashboard and Project tabs -->
     <nav class="nav-bar">
-        <a href="dashboard.html">Dashboard</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About Track the Thread</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About Track the Thread</a>
     </nav>
-<!-- Header with the text 'Hello User's First Name' -->
+    <!-- Header with the text 'Hello User's First Name' -->
     <header>
-        <span id="welcome-header">Welcome </span>
+      <h1 id="welcome-header"></h1>
     </header>
-<!-- Sub-header with the text 'Projects' -->
+    <!-- Sub-header with the text 'Projects' -->
     <main>
-<!-- Add new Project button that links to the clear Projects tab -->
-        <a href="projects.html" class="add-btn">Add New Project</a>
-<!-- Sub-sub-header with the text 'Current Projects' -->
-        <h3>Saved Projects</h3>
-<!-- Buttons that links to the saved projects (only shows 2-3) -->
-        <div id="project-links-container"></div>
-<!-- Button that reveals more saved projects -->
-<!-- Sub-header with the text 'Explore Ravelry Patterns' -->
-        <h2>Explore Ravelry Patterns</h2>
-<!-- Sub-sub-header with the text 'This Month's most Popular Knitting Patterns -->
-        <h3>This month's most popular Crochet Patterns</h3>
-<!-- Dynamic section that pulls from Ravelry App to show a grid of the top 6 most popular patterns -->
-<!-- Sub-sub-header with the text 'This Month's most Popular Crochet Patterns -->
-        <h3>This month's most popular Knitting Patterns</h3>
-<!-- Dynamic section that pulls from Ravelry App to show a grid of the top 6 most popular patterns -->
+      <!-- Add new Project button that links to the clear Projects tab -->
+      <a href="projects.html" class="add-btn">Add New Project</a>
+      <!-- Sub-sub-header with the text 'Current Projects' -->
+      <h3>Saved Projects</h3>
+      <div id="project-links-container">
+        <p>No projects saved yet</p>
+      </div>
+      <!-- Buttons that links to the saved projects (only shows 2-3) -->
+      <div id="project-links-container"></div>
+      <!-- Button that reveals more saved projects -->
+      <!-- Sub-header with the text 'Explore Ravelry Patterns' -->
+      <h2>Explore Ravelry Patterns</h2>
+      <!-- Sub-sub-header with the text 'This Month's most Popular Knitting Patterns -->
+      <h3>This month's most popular Crochet Patterns</h3>
+      <!-- Dynamic section that pulls from Ravelry App to show a grid of the top 6 most popular patterns -->
+      <!-- Sub-sub-header with the text 'This Month's most Popular Crochet Patterns -->
+      <h3>This month's most popular Knitting Patterns</h3>
+      <!-- Dynamic section that pulls from Ravelry App to show a grid of the top 6 most popular patterns -->
     </main>
-<!-- Footer that includes all details required -->
+    <!-- Footer that includes all details required -->
     <footer>
-                <div class="footer-group">
-                        <p>&copy; 2026 Kiara Gross.</p>
-                        <p>Built with HTML, CSS, and JavaScript.</p>
-                </div>
-                <div class="footer-links">
-                        <p>Let's Stay Connected!</p>
-                        <ul>
-                                <li><a href="#">GitHub</a></li>
-                                <li><a href="#">LinkedIn</a></li>
-                                <li><a href="#">Email</a></li>
-                        </ul>
-                </div>
-        </footer>
+      <div class="footer-group">
+        <p>&copy; 2026 Kiara Gross.</p>
+        <p>Built with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="footer-links">
+        <p>Let's Stay Connected!</p>
+        <ul>
+          <li><a href="https://github.com/grosskiara45-alt">GitHub</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/kiaragross/">LinkedIn</a>
+          </li>
+          <li>
+            <a href="mailto:grosskiara45@gmail.com">grosskiara45@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
     <script src="public/js/dashboard.js"></script>
-</body>
+  </body>
 </html>

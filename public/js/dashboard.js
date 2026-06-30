@@ -1,6 +1,19 @@
 // Welcome Header
     // Retrieve User Data from Profile
-    // Display "Welcome [User's First Name]"
+        // Initialze storeUser using getItem
+    const storedUser = localStorage.getItem('profile');
+
+    if(storedUser) {
+        const user = JSON.parse(storedUser);
+
+        userName = user.firstname;
+
+        document.getElementById("welcome-header").textContent = `Welcome ${userName}`;
+    }else {
+
+        document.getElementById("welcome-header").textContent = "Welcome Guest";
+
+    }
 
 // Current Projects
     // Wait for page to load
