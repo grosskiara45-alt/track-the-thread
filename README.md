@@ -30,5 +30,7 @@ Revised project plan before final submission on Sunday. Worked on first draft of
 Turned in Project plan. Continued working on HTML code and started working on JavaScript logic for creating a profile. Researched local storage and form validation. 
 **06/30/2026**
 Drafted JavaScript code for users creating their profile, saving the data to the local storage, then retrieving the user's first name to display on the Dashboard Header. Began writing JavaScript code for the Projects page to validate the users input and save project entries. Added content to the About page. Configure default HTML to Prettier formatting.
+**07/06/2026**
+Restarted Javascript code for Projects pages. Researched Ravelry API documentation for future reference and best steps for using an API securely.
 
 ## Credits

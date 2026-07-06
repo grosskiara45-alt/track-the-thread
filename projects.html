@@ -17,7 +17,7 @@
       <span id="project-header">New Project</span>
     </header>
     <main>
-      <form class="project-form">
+      <form class="project-form" id="project-form">
         <fieldset>
           <legend>Project Details</legend>
 
@@ -30,7 +30,7 @@
               value="New Project"
               required
             /><br />
-            <span class="error-message" id="projectTitleError"></span>
+            <span class="error-message" id="project-title-error"></span>
           </div>
 
           <div class="form-group">
@@ -41,7 +41,7 @@
               name="current-date"
               required
             /><br />
-            <span class="error-message" id="currentDateError"></span>
+            <span class="error-message" id="current-date-error"></span>
           </div>
 
           <div class="form-group">
@@ -63,113 +63,68 @@
               value="loom-knitting"
               name="craft"
             /><br />
-            <span class="error-message" id="craftError"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="pattern-file">Upload Pattern PDF or Image</label><br />
-            <input
-              type="file"
-              id="pattern-file"
-              name="pattern-file"
-              accept="image/*,.pdf"
-            /><br />
-            <span class="error-message" id="patternFileError"></span>
+            <span class="error-message" id="craft-error"></span>
           </div>
 
           <div class="form-group">
             <label for="pattern-link">Upload Pattern Link</label><br />
             <input type="url" id="pattern-link" name="pattern-link" /><br />
-            <span class="error-message" id="patternLinkError"></span>
+            <span class="error-message" id="pattern-link-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="fiber-type">Fiber Type</label><br />
-            <select id="fiber-type" name="fiber-type" multiple>
-              <option value="wool">Wool</option>
-              <option value="alpaca">Alpaca</option>
-              <option value="cashmere">Cashmere</option>
-              <option value="mohair">Mohair</option>
-              <option value="cotton">Cotton</option>
-              <option value="linen">Linen</option>
-              <option value="bamboo">Bamboo</option>
-              <option value="acrylic">Acrylic</option>
-              <option value="nylon">Nylon</option>
-              <option value="rayon">Rayon</option>
-              <option value="other">Other</option></select
-            ><br />
-            <span class="error-message" id="fiberError"></span>
+            <label for="fiber-type">Fiber Type (up to 20 characters)</label><br />
+            <input type="text" id="fiber-type" name="fiber-type" maxlength="20"/><br />
+            <span class="error-message" id="fiber-type-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="yarn-weight">Yarn Weight</label><br />
-            <select id="yarn-weight" name="yarn-weight" multiple>
-              <option value="lace">0 - Lace Weight</option>
-              <option value="super-fine">
-                1 - Super Fine/Fingering Weight
-              </option>
-              <option value="fine">2 - Fine/Sport Weight</option>
-              <option value="dk">3 - Light/DK Weight</option>
-              <option value="medium">4 - Medium/Worsted Weight</option>
-              <option value="bulky">5 - Bulky/Chunky Weight</option>
-              <option value="super-bulky">6 - Super Bulky Weight</option>
-              <option value="jumbo">7 - Jumbo Weight</option></select
-            ><br />
-            <span class="error-message" id="yarnWeightError"></span>
+            <label for="yarn-weight">Yarn Weight (up to 20 characters)</label><br />
+            <input type="text" id="yarn-weight" name="yarn-weight" maxlength="20"/><br />
+            <span class="error-message" id="yarn-weight-error"></span>
           </div>
 
           <div class="form-group">
             <label for="needle-size">Needle Size</label><br />
-            <input type="text" id="needle-size" name="needle-size" /><br />
-            <span class="error-message" id="needleSizeError"></span>
+            <input type="text" id="needle-size" name="needle-size"/><br />
+            <span class="error-message" id="needle-size-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="project-fit">Age/Size/Fit</label><br />
-            <input type="text" id="project-fit" name="project-fit" /><br />
-            <span class="error-message" id="projectFitError"></span>
+            <label for="project-fit">Age/Size/Fit (up to 20 characters)</label><br />
+            <input type="text" id="project-fit" name="project-fit" maxlength="20"/><br />
+            <span class="error-message" id="project-fit-error"></span>
           </div>
 
           <div class="form-group">
             <label for="row-tracker">Row Tracker</label><br />
             <input type="number" id="row-tracker" name="row-tracker" /><br />
-            <span class="error-message" id="rowTrackerError"></span>
+            <span class="error-message" id="row-tracker-rrror"></span>
           </div>
         </fieldset>
         <fieldset>
           <legend>Project Notes</legend>
 
           <div class="form-group">
-            <label for="project-notes">Notes</label><br />
+            <label for="project-notes">Notes (up to 250 characters)</label><br />
             <textarea
               id="project-notes"
               name="project-notes"
               rows="10"
               cols="50"
+              maxlength="250"
               placeholder="Type your project notes here!"
             ></textarea>
-            <span class="error-message" id="projectNotesError"></span>
+            <span class="error-message" id="project-notes-error"></span>
           </div>
-          <div class="form-group">
-            <label for="project-image">Upload Progress Photos</label><br />
-            <input
-              type="file"
-              id="project-image"
-              name="project-image"
-              accept=".png, .jpg, .jpeg"
-              multiple
-            /><br />
-            <span class="error-message" id="projectImageError"></span>
           </div>
         </fieldset>
-        <button type="submit" name="submit">Submit</button>
-        <button type="reset" name="reset">Reset</button>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
       </form>
       <!-- Links to previous Projects that include a Remove Project button -->
       <h3>Saved Projects</h3>
-      <div id="project-links-container">
-        <p>No projects saved yet</p>
-      </div>
+      <div id="project-links-container"></div>
     </main>
     <footer>
       <div class="footer-group">
