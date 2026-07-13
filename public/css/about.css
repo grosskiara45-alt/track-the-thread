@@ -13,14 +13,6 @@ body {
     Bold 700 Italic, ExtraBold 800 Italic, Black 900 Italic */
 }
 
-.nav-bar{
-    display: flex;
-    margin-top: 2rem;
-    padding: 1rem;
-    gap: 1rem;
-    justify-content: center;
-}
-
 .header{
     display: flex;
     flex-direction: column;
