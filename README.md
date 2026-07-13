@@ -32,5 +32,7 @@ Turned in Project plan. Continued working on HTML code and started working on Ja
 Drafted JavaScript code for users creating their profile, saving the data to the local storage, then retrieving the user's first name to display on the Dashboard Header. Began writing JavaScript code for the Projects page to validate the users input and save project entries. Added content to the About page. Configure default HTML to Prettier formatting.
 **07/06/2026**
 Restarted Javascript code for Projects pages. Researched Ravelry API documentation for future reference and best steps for using an API securely.
+**07/13/2026**
+Finished JavaScript code for Projects page so that it validates, saves, and renders links to Projects(on both the Projects and Dashboard pages). Commented out logic for retrieving data from Ravelry API through reviewing the Quote Card project. Continued researching Ravelry API by reading documentation. Sketched out first draft of website logo. Found potential color palette and font. Began CSS stylings for pages.
 
 ## Credits

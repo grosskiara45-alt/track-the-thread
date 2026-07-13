@@ -1,9 +1,10 @@
+// Validate, Save, and Render Project Form
 const projectForm = document.getElementById("project-form");
 
 projectForm.addEventListener('submit', (event) => {
     event.preventDefault();
     if(validateForm()){
-        console.log("Project Entry submitted successfullly!")
+        console.log("Project Entry submitted successfullly!");
         const projectTitle = document.getElementById("project-title").value.trim();
         const currentDate = document.getElementById("current-date").value;
         const craftElement = document.querySelector('input[name="craft"]:checked');
@@ -15,6 +16,8 @@ projectForm.addEventListener('submit', (event) => {
         const rowTracker  = document.getElementById("row-tracker").value.trim();
         const projectNotes  = document.getElementById("project-notes").value.trim();
 
+        const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects")) || [];
+
 
         const projectData = {
             projectTitle: projectTitle,
@@ -25,10 +28,9 @@ projectForm.addEventListener('submit', (event) => {
             needleSize: needleSize,
             projectFit: projectFit,
             rowTracker: rowTracker,
-            projectNotes: projectNotes
-        }
-
-        const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects")) || [];
+            projectNotes: projectNotes,
+            id: `${projectTitle}-${Date.now()}`
+        };
 
         savedProjects.push(projectData);
 
@@ -38,7 +40,7 @@ projectForm.addEventListener('submit', (event) => {
 
         renderProjects();
     } else {
-        console.log("Project Entry Form Validation failed. View errors")
+        console.log("Project Entry Form Validation failed. View errors");
     }
 });
 
@@ -49,7 +51,7 @@ projectForm.addEventListener('reset', () => {
 function validateForm() {
     const projectTitle = document.getElementById("project-title").value.trim();
     const currentDate = document.getElementById("current-date").value;
-    const craftElement = document.querySelector('input[name="craft"]:checked');
+    const craftElement = document.querySelector(`input[name="craft"]:checked`);
     const selectedCraft = craftElement ? craftElement.value : "";
     const validCraft = ['knitting', 'crochet', 'machine-knitting', 'loom-knitting'];
     const fiberType  = document.getElementById("fiber-type").value.trim();
@@ -57,7 +59,7 @@ function validateForm() {
     const needleSize  = document.getElementById("needle-size").value.trim();
     const projectFit  = document.getElementById("project-fit").value.trim();
     const rowTracker  = document.getElementById("row-tracker").value.trim();
-    const projectNotes  = document.getElementById("row-tracker").value.trim();
+    const projectNotes  = document.getElementById("project-notes").value.trim();
 
     const projectTitleError = document.getElementById("project-title-error");
     const currentDateError = document.getElementById("current-date-error");
@@ -86,14 +88,14 @@ function validateForm() {
         isValid = false;
     } 
 
-    if (currentDate === "" || !currentDate.Date(currentDate)) {
+    if (currentDate === "") {
         currentDateError.textContent = "Please enter valid date for your project!";
         isValid = false;
     } 
 
     if (selectedCraft) {
-        if (selectedCraft.value !== validCraft) {
-            craftError.textContent = "Please select valid option!"
+        if (!validCraft.includes(selectedCraft)) {
+            craftError.textContent = "Please select valid option!";
             isValid = false;
         }
     }
@@ -113,8 +115,8 @@ function validateForm() {
     }
 
     if (needleSize) {
-        if (!Number(needleSize)) {
-            needleSizeError.textContent = "Please enter a valid number"
+        if (isNaN(needleSize)) {
+            needleSizeError.textContent = "Please enter a valid number";
             isValid = false;
         }
     }
@@ -127,8 +129,8 @@ function validateForm() {
     }
 
     if (rowTracker) {
-        if (!Number(rowTracker)) {
-            rowTrackerError.textContent = "Please enter a valid number"
+        if (isNaN(rowTracker)) {
+            rowTrackerError.textContent = "Please enter a valid number";
             isValid = false;
         }
     }
@@ -143,10 +145,134 @@ function validateForm() {
    return isValid;
 }
 
+function loadProject(project){
+    document.getElementById("project-title").value = project.projectTitle || "";
+    document.getElementById("current-date").value = project.currentDate || "";
+    document.getElementById("fiber-type").value = project.fiberType || "";
+    document.getElementById("yarn-weight").value = project.yarnWeight || "";
+    document.getElementById("needle-size").value = project.needleSize || "";
+    document.getElementById("project-fit").value = project.projectFit || "";
+    document.getElementById("row-tracker").value = project.rowTracker || "";
+    document.getElementById("project-notes").value = project.projectNotes || "";
+
+    if(project.craftType) {
+        const radioToSelect = document.querySelector(`input[name="craft"]:checked`);
+        if (radioToSelect) {
+            radioToSelect.checked = true;
+        }
+        console.log (`Details successfully loaded for ${project.projectTitle}`);
+    }
+
+}
+
+function deleteProject(projectId){
+    const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects"));
+    const updatedProjects = savedProjects.filter(project => project.id !== projectId);
+    localStorage.setItem("savedPatternProjects", JSON.stringify(updatedProjects));
+    renderProjects();
+}
+
 function renderProjects() {   
-   
+    const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects"));
+    const projectContainer = document.getElementById("project-links-container");
+    
+    projectContainer.innerHTML = "";
+
+    if (savedProjects && savedProjects.length > 0) {
+        savedProjects.forEach(project => {
+            const projectRow = document.createElement("div");
+            projectRow.className = "project-row";
+
+            const projectLink = document.createElement("a");
+            projectLink.className = "project-link";
+            projectLink.href ="#";
+            projectLink.textContent = `${project.projectTitle} ${project.currentDate}`;
+
+            projectLink.addEventListener('click',(event) =>{
+                event.preventDefault();
+                loadProject(project);
+                projectHeader(project.projectTitle);
+            });
+
+            const deleteButton = document.createElement("button");
+            deleteButton.type = "button";
+            deleteButton.textContent = "X";
+
+            deleteButton.addEventListener('click', (event) => {
+                const confirmDelete = confirm("Are you sure you would like to remove this project entry?");
+                if (confirmDelete) {
+                    deleteProject(project.id);
+                }
+            });
+
+            projectRow.append(projectLink);
+            projectRow.append(deleteButton);
+
+            projectContainer.append(projectRow);
+        });
+    } 
+}
+renderProjects();
+
+function projectHeader(title) {
+    const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects"));
+    const projectHeaderContainer = document.getElementById("project-header");
+    projectHeaderContainer.textContent = "";
+
+    const projectHeaderTitle = document.createElement("h1");
+    projectHeaderTitle.className = "project-header";
+
+    if(title) {
+        projectHeaderTitle.textContent = title;
+    } else {
+        projectHeaderTitle.textContent = 'New Project';
+    }
+    projectHeaderContainer.append(projectHeaderTitle);
 }
 
 function resetErrors() {
+    document.getElementById("project-title-error").textContent = "";
+    document.getElementById("current-date-error").textContent = "";
+    document.getElementById("craft-error").textContent = "";
+    document.getElementById("fiber-type-error").textContent = "";
+    document.getElementById("yarn-weight-error").textContent = "";
+    document.getElementById("needle-size-error").textContent = "";
+    document.getElementById("project-fit-error").textContent = "";
+    document.getElementById("row-tracker-error").textContent = "";
+    document.getElementById("project-notes-error").textContent = "";
+}
 
+function callbackProject(){
+    const currentId = localStorage.getItem("currentProjectId");
+
+    if (currentId) {
+        const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects"));
+        const project = savedProjects.find(project => project.id === currentId);
+
+        if (project){
+            if(document.getElementById("project-title")) document.getElementById("project-title").value = project.projectTitle || "";
+            if(document.getElementById("current-date")) document.getElementById("current-date").value = project.currentDate || "";
+            if(document.getElementById("fiber-type")) document.getElementById("fiber-type").value = project.fiberType || "";
+            if(document.getElementById("yarn-weight")) document.getElementById("yarn-weight").value = project.yarnWeight || "";
+            if(document.getElementById("needle-size")) document.getElementById("needle-size").value = project.needleSize || "";
+            if(document.getElementById("project-fit")) document.getElementById("project-fit").value = project.projectFit || "";
+            if(document.getElementById("row-tracker")) document.getElementById("row-tracker").value = project.rowTracker || "";
+            if(document.getElementById("project-notes")) document.getElementById("project-notes").value = project.projectNotes || "";
+            
+            if (project.craftType) {
+                const radioToSelect = document.querySelector(`input[name="craft"][value="${project.craftType}"]`);
+                if (radioToSelect) {
+                    radioToSelect.checked = true;
+                }
+            }    
+        }
+        localStorage.removeItem("currentProjectId");
+        projectHeader(project.projectTitle);
+    }
+}
+const currentId = localStorage.getItem("currentProjectId");
+if (currentId) {
+    callbackProject();
+} else {
+    projectHeader();
 }

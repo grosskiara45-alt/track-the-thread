@@ -3,42 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/reset.css" />
+    <link rel="stylesheet" href="public/css/dashboard.css" />
     <title>Dashboard</title>
   </head>
   <body>
-    <!-- Dashboard and Project tabs -->
     <nav class="nav-bar">
       <a href="dashboard.html">Dashboard</a>
       <a href="projects.html">Projects</a>
-      <a href="about.html">About Track the Thread</a>
+      <a href="about.html">About</a>
     </nav>
-    <!-- Header with the text 'Hello User's First Name' -->
-    <header>
+    <header class="header">
       <h1 id="welcome-header"></h1>
     </header>
-    <!-- Sub-header with the text 'Projects' -->
-    <main>
-      <!-- Add new Project button that links to the clear Projects tab -->
+    <main class="main-section">
       <a href="projects.html" class="add-btn">Add New Project</a>
-      <!-- Sub-sub-header with the text 'Current Projects' -->
       <h3>Saved Projects</h3>
       <div id="project-links-container">
         <p>No projects saved yet</p>
       </div>
-      <!-- Buttons that links to the saved projects (only shows 2-3) -->
-      <div id="project-links-container"></div>
-      <!-- Button that reveals more saved projects -->
-      <!-- Sub-header with the text 'Explore Ravelry Patterns' -->
-      <h2>Explore Ravelry Patterns</h2>
-      <!-- Sub-sub-header with the text 'This Month's most Popular Knitting Patterns -->
-      <h3>This month's most popular Crochet Patterns</h3>
-      <!-- Dynamic section that pulls from Ravelry App to show a grid of the top 6 most popular patterns -->
-      <!-- Sub-sub-header with the text 'This Month's most Popular Crochet Patterns -->
-      <h3>This month's most popular Knitting Patterns</h3>
-      <!-- Dynamic section that pulls from Ravelry App to show a grid of the top 6 most popular patterns -->
+      <h2>Trending Ravelry Patterns</h2>
+      <div id="ravelry-patterns"></div>
     </main>
-    <!-- Footer that includes all details required -->
-    <footer>
+    <footer class="footer">
       <div class="footer-group">
         <p>&copy; 2026 Kiara Gross.</p>
         <p>Built with HTML, CSS, and JavaScript.</p>

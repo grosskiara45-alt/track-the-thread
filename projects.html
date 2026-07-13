@@ -3,20 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/reset.css" />
+    <link rel="stylesheet" href="public/css/projects.css" />
     <title>Projects</title>
   </head>
   <body>
-    <!-- Dashboard and Project tabs -->
     <nav class="nav-bar">
       <a href="dashboard.html">Dashboard</a>
       <a href="projects.html">Projects</a>
-      <a href="about.html">About Track the Thread</a>
+      <a href="about.html">About</a>
     </nav>
-    <!-- Header with the text 'New Project' (for saved projects, it will be the Project title) -->
-    <header>
-      <span id="project-header">New Project</span>
+    <header class="header">
+      <span id="project-header"></span>
     </header>
-    <main>
+    <main class="main-section">
       <form class="project-form" id="project-form">
         <fieldset>
           <legend>Project Details</legend>
@@ -99,7 +102,7 @@
           <div class="form-group">
             <label for="row-tracker">Row Tracker</label><br />
             <input type="number" id="row-tracker" name="row-tracker" /><br />
-            <span class="error-message" id="row-tracker-rrror"></span>
+            <span class="error-message" id="row-tracker-error"></span>
           </div>
         </fieldset>
         <fieldset>
@@ -111,7 +114,7 @@
               id="project-notes"
               name="project-notes"
               rows="10"
-              cols="50"
+              cols="30"
               maxlength="250"
               placeholder="Type your project notes here!"
             ></textarea>
@@ -122,11 +125,10 @@
         <button type="submit">Submit</button>
         <button type="reset">Reset</button>
       </form>
-      <!-- Links to previous Projects that include a Remove Project button -->
       <h3>Saved Projects</h3>
       <div id="project-links-container"></div>
     </main>
-    <footer>
+    <footer class="footer"> 
       <div class="footer-group">
         <p>&copy; 2026 Kiara Gross.</p>
         <p>Built with HTML, CSS, and JavaScript.</p>

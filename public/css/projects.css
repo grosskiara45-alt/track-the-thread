@@ -1,0 +1,58 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    /* Font Styles: Thin 100,ExtraLight 200, Light 300, Regular 400, 
+    Medium 500, SemiBold 600, Bold 700, ExtraBold 800, Black 900,
+    Thin 100 Italic, ExtraLight 200 Italic, Light 300 Italic,
+    Regular 400 Italic, Medium 500 Italic, SemiBold 600 Italic,
+    Bold 700 Italic, ExtraBold 800 Italic, Black 900 Italic */
+}
+
+.nav-bar{
+    display: flex;
+    margin-top: 2rem;
+    padding: 1rem;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    margin: 0 2rem;
+    padding: 1rem;
+}
+
+.header h1{
+
+}
+.main-section{
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.main-section h3{
+    text-align: center;
+}
+
+.project-form{
+    /* come up with consistent styling for forms */
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+    margin: 2rem;
+    padding: 1rem;
+}
