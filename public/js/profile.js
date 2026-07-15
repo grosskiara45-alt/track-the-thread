@@ -1,9 +1,9 @@
-// Validate User Input, Save User Input to Local Storage, and Direct to DashBoard Page
 const profileForm = document.getElementById("profile-form");
 
+// Submit profile form event listener
 profileForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    if(validateForm()) {
+    if(validateProfileForm()) {
         console.log("Profile Form submitted successfully!")
         const profileData = {
             firstname: document.getElementById("fname").value.trim(),
@@ -20,12 +20,13 @@ profileForm.addEventListener('submit', (event) => {
     }
 });
 
-
+// Reset profile form event listener
 profileForm.addEventListener('reset', () => {
-    resetErrors();
+    resetProfileErrors();
 });
 
-function validateForm () {
+// Validate profile form
+function validateProfileForm() {
     const fName = document.getElementById("fname").value.trim();
     const lName = document.getElementById("lname").value.trim();
     const selectedTheme = document.querySelector('input[name="theme"]:checked');
@@ -58,7 +59,8 @@ function validateForm () {
     return isValid;
 }
 
-function resetErrors() {
+// Reset profile form errors
+function resetProfileErrors() {
     document.getElementById("fnameError").textContent = "";
     document.getElementById("lnameError").textContent = "";
     document.getElementById("themeError").textContent = "";

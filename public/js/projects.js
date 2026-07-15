@@ -1,9 +1,9 @@
-// Validate, Save, and Render Project Form
 const projectForm = document.getElementById("project-form");
 
+// Submit Project form event listener
 projectForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    if(validateForm()){
+    if(validateProjectForm()){
         console.log("Project Entry submitted successfullly!");
         const projectTitle = document.getElementById("project-title").value.trim();
         const currentDate = document.getElementById("current-date").value;
@@ -17,7 +17,6 @@ projectForm.addEventListener('submit', (event) => {
         const projectNotes  = document.getElementById("project-notes").value.trim();
 
         const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects")) || [];
-
 
         const projectData = {
             projectTitle: projectTitle,
@@ -44,11 +43,14 @@ projectForm.addEventListener('submit', (event) => {
     }
 });
 
+
+// Reset Project form event listener
 projectForm.addEventListener('reset', () => {
-    resetErrors();
+    resetProjectErrors();
 });
 
-function validateForm() {
+// Validate Project form
+function validateProjectForm() {
     const projectTitle = document.getElementById("project-title").value.trim();
     const currentDate = document.getElementById("current-date").value;
     const craftElement = document.querySelector(`input[name="craft"]:checked`);
@@ -145,7 +147,8 @@ function validateForm() {
    return isValid;
 }
 
-function loadProject(project){
+// Load Project form once user saves a project
+function loadProjectForm(project){
     document.getElementById("project-title").value = project.projectTitle || "";
     document.getElementById("current-date").value = project.currentDate || "";
     document.getElementById("fiber-type").value = project.fiberType || "";
@@ -165,13 +168,15 @@ function loadProject(project){
 
 }
 
-function deleteProject(projectId){
+// Remove a project form from local storage if users clicks delete button
+function deleteProjectForm(projectId){
     const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects"));
     const updatedProjects = savedProjects.filter(project => project.id !== projectId);
     localStorage.setItem("savedPatternProjects", JSON.stringify(updatedProjects));
     renderProjects();
 }
 
+// Render saved Project form if user clicks on saved project link
 function renderProjects() {   
     const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects"));
     const projectContainer = document.getElementById("project-links-container");
@@ -190,7 +195,7 @@ function renderProjects() {
 
             projectLink.addEventListener('click',(event) =>{
                 event.preventDefault();
-                loadProject(project);
+                loadProjectForm(project);
                 projectHeader(project.projectTitle);
             });
 
@@ -201,7 +206,7 @@ function renderProjects() {
             deleteButton.addEventListener('click', (event) => {
                 const confirmDelete = confirm("Are you sure you would like to remove this project entry?");
                 if (confirmDelete) {
-                    deleteProject(project.id);
+                    deleteProjectForm(project.id);
                 }
             });
 
@@ -214,6 +219,7 @@ function renderProjects() {
 }
 renderProjects();
 
+// Change header on page to match project title
 function projectHeader(title) {
     const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects"));
     const projectHeaderContainer = document.getElementById("project-header");
@@ -230,7 +236,8 @@ function projectHeader(title) {
     projectHeaderContainer.append(projectHeaderTitle);
 }
 
-function resetErrors() {
+// Reset Project form errors
+function resetProjectErrors() {
     document.getElementById("project-title-error").textContent = "";
     document.getElementById("current-date-error").textContent = "";
     document.getElementById("craft-error").textContent = "";
@@ -242,7 +249,7 @@ function resetErrors() {
     document.getElementById("project-notes-error").textContent = "";
 }
 
-function callbackProject(){
+function callbackProjectForm(){
     const currentId = localStorage.getItem("currentProjectId");
 
     if (currentId) {
@@ -272,7 +279,7 @@ function callbackProject(){
 }
 const currentId = localStorage.getItem("currentProjectId");
 if (currentId) {
-    callbackProject();
+    callbackProjectForm();
 } else {
     projectHeader();
 }

@@ -1,6 +1,6 @@
-// import fetchPopularPateerns from ravelryAPI.js
+// import fetchPopularPatterns from ravelryAPI.js
 
-// Welcome Header
+// Change header on page to Welcome user's name
 const storedUser = localStorage.getItem('profile');
 
 if(storedUser) {
@@ -15,20 +15,21 @@ if(storedUser) {
 
 }
 
-// Current Projects
-function loadProject(project){
+// Load saved projects from projects page so users can access projects quickly
+function loadProjectForm(project){
     localStorage.setItem("currentProjectId", project.id);
     window.location.href= "projects.html";
 
 }
-
-function deleteProject(projectId){
+// Delete projects from dashboard page
+function deleteProjectForm(projectId){
     const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects"));
     const updatedProjects = savedProjects.filter(project => project.id !== projectId);
     localStorage.setItem("savedPatternProjects", JSON.stringify(updatedProjects));
     renderProjects();
 }
 
+// Render saved projects so that the saved data is on the projects page for user's access
 function renderProjects() {   
     const savedProjects = JSON.parse(localStorage.getItem("savedPatternProjects"));
     const projectContainer = document.getElementById("project-links-container");
@@ -47,7 +48,7 @@ function renderProjects() {
 
             projectLink.addEventListener('click',(event) =>{
                 event.preventDefault();
-                loadProject(project);
+                loadProjectForm(project);
             });
 
             const deleteButton = document.createElement("button");
@@ -57,7 +58,7 @@ function renderProjects() {
             deleteButton.addEventListener('click', (event) =>{
                 const confirmDelete = confirm("Are you sure you would like to remove this project entry?");
                 if (confirmDelete) {
-                    deleteProject(project.id);
+                    deleteProjectForm(project.id);
                 }
             });
 
@@ -71,12 +72,39 @@ function renderProjects() {
 renderProjects();
 
 // Ravelry Patterns
-// Create an async function displayPopularPatterns()
-    // Create the container by grabbing the element by id
-    // Fetch the data by const patterns as an await fetchPopularPatterns()
-    // Filter out Top Patterns
-    // Clear container innerhtml
-    // If statement for if the top patterns equal 0 - unable to load patterns
-    // Use a For Each statement to create pattern card divs that will include the pattern image(smallest size), pattern name, and author name using textContent (NOT innerhtml for safety)
-    // Append the card to the container
-    // Run the function
+const ravelryPatterns = document.getElementById("ravelry-patterns");
+
+document.addEventListener("DOMContentLoaded", async() => {
+    try {
+        const response = await fetch("http://localhost:3000/api/patterns/search.json");
+        const json = await response.json();
+        const apiData = json.data || {};
+
+        const patterns = apiData.patterns || [];
+
+        ravelryPatterns.innerHTML = "";
+        patterns.forEach(pattern => {
+            const patternName = document.createElement("h3");
+            patternName.className = "pattern-name";
+            patternName.textContent = `${pattern.name} by ${pattern.pattern_author.name}`;
+            ravelryPatterns.appendChild(patternName);
+
+            const patternPhoto = document.createElement("img");
+            patternPhoto.className = "pattern-photo";
+            patternPhoto.src = `${pattern.first_photo.medium_url}`;
+            patternPhoto.alt = `${pattern.name}`;
+            ravelryPatterns.appendChild(patternPhoto);
+
+            const patternLink = document.createElement("a");
+            patternLink.className = "pattern-link";
+            patternLink.href = `"https://www.ravelry.com/patterns/library/"${pattern.permalink}`;
+            patternLink.textContent = `"https://www.ravelry.com/patterns/library/"${pattern.permalink}`;
+            ravelryPatterns.appendChild(patternLink);
+
+        })
+ 
+    } catch (error) {
+        console.error("Error loading patterns", error.message);
+        ravelryPatterns.textContent = "Failed to load patterns";
+    }
+});
