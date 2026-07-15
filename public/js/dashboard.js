@@ -6,7 +6,7 @@ const storedUser = localStorage.getItem('profile');
 if(storedUser) {
     const user = JSON.parse(storedUser);
 
-    userName = user.firstname;
+    const userName = user.firstname;
 
     document.getElementById("welcome-header").textContent = `Welcome ${userName}`;
 } else {
@@ -97,8 +97,9 @@ document.addEventListener("DOMContentLoaded", async() => {
 
             const patternLink = document.createElement("a");
             patternLink.className = "pattern-link";
-            patternLink.href = `"https://www.ravelry.com/patterns/library/"${pattern.permalink}`;
+            patternLink.href = `https://www.ravelry.com/patterns/library/${pattern.permalink}`;
             patternLink.textContent = `"https://www.ravelry.com/patterns/library/"${pattern.permalink}`;
+            patternLink.target = "_blank";
             ravelryPatterns.appendChild(patternLink);
 
         })
