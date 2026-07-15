@@ -76,7 +76,9 @@ const ravelryPatterns = document.getElementById("ravelry-patterns");
 
 document.addEventListener("DOMContentLoaded", async() => {
     try {
-        const response = await fetch("http://localhost:3000/api/patterns/search.json");
+        const response = await fetch("http://localhost:3000/api/patterns/search.json", {
+            targetAddressSpace: "loopback"
+        });
         const json = await response.json();
         const apiData = json.data || {};
 
