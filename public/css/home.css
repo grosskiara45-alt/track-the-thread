@@ -5,44 +5,91 @@ body {
     margin: 0 auto;
     box-sizing: border-box;
     width: 100%;
+    font-size: 1rem;
     /* Font Styles: Thin 100,ExtraLight 200, Light 300, Regular 400, 
     Medium 500, SemiBold 600, Bold 700, ExtraBold 800, Black 900,
     Thin 100 Italic, ExtraLight 200 Italic, Light 300 Italic,
     Regular 400 Italic, Medium 500 Italic, SemiBold 600 Italic,
     Bold 700 Italic, ExtraBold 800 Italic, Black 900 Italic */
+    background-color: #C8EEFF;
+    color: #033E8C;
 }
 
 .header{
+    margin: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem;
-    gap: .5rem;
-    padding: 1rem;
+    text-align: center;
 }
 
-.header-description{
+.header-logo{
+    margin-top: 2rem;
+    margin-bottom:1rem;
+    max-width: 200px;
+}
+
+.header-grid{
     display: flex;
-    flex-direction: column;
-    align-items: center; 
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+}
+
+.header h1{
+    font-size: 2rem;
+    padding-bottom: 10px;
+}
+
+.header p{
+    font-size: .9rem;
+    padding-bottom: 10px;
+
+}
+
+.header-pics{
+    width: 33.3%;
+}
+
+.header-pics img{
+    border-radius: 8px;
+    margin-bottom: 10px;;
+}
+
+.header figure figcaption{
+    background-color: #033E8C;
+    padding: 5px;
+    color: white;
+    border-radius: 8px;
+    font-size: .9rem;
 }
 
 .main-section{
+    margin: 0 2rem 2rem 2rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
     text-align: center;
-    gap: .5rem;
-    margin: 2rem;
-    padding: 1rem;
+    font-size: .9rem;
+    gap: 10px;
+}
+
+.get-started{
+    background-color: #033E8C;
+    padding: 8px;
+    color: white;
+    border-radius: 8px;
+    width: 50%;
+}
+
+.return-profile{
+    background-color: #0275DC;
+    padding: 8px;
+    color: white;
+    border-radius: 8px;
+    width: 50%;
 }
 
 .footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: .5rem;
-    margin: 2rem;
-    padding: 1rem;
+    display: none;
 }
-

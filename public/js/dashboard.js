@@ -8,10 +8,10 @@ if(storedUser) {
 
     const userName = user.firstname;
 
-    document.getElementById("welcome-header").textContent = `Welcome ${userName}`;
+    document.getElementById("welcome-header").textContent = `Welcome ${userName}!`;
 } else {
 
-    document.getElementById("welcome-header").textContent = "Welcome Guest";
+    document.getElementById("welcome-header").textContent = "Welcome Guest!";
 
 }
 
@@ -54,6 +54,7 @@ function renderProjects() {
             const deleteButton = document.createElement("button");
             deleteButton.type = "button";
             deleteButton.textContent = "X";
+            deleteButton.className = "delete-btn";
 
             deleteButton.addEventListener('click', (event) =>{
                 const confirmDelete = confirm("Are you sure you would like to remove this project entry?");
@@ -63,9 +64,9 @@ function renderProjects() {
             });
 
             projectRow.append(projectLink);
-            projectRow.append(deleteButton);
 
             projectContainer.append(projectRow);
+            projectContainer.append(deleteButton);
         });
     } 
 }
@@ -86,23 +87,27 @@ document.addEventListener("DOMContentLoaded", async() => {
 
         ravelryPatterns.innerHTML = "";
         patterns.forEach(pattern => {
-            const patternName = document.createElement("h3");
-            patternName.className = "pattern-name";
-            patternName.textContent = `${pattern.name} by ${pattern.pattern_author.name}`;
-            ravelryPatterns.appendChild(patternName);
-
-            const patternPhoto = document.createElement("img");
-            patternPhoto.className = "pattern-photo";
-            patternPhoto.src = `${pattern.first_photo.medium_url}`;
-            patternPhoto.alt = `${pattern.name}`;
-            ravelryPatterns.appendChild(patternPhoto);
+            const patternContainer = document.createElement("div");
+            patternContainer.className = "pattern-box";
 
             const patternLink = document.createElement("a");
             patternLink.className = "pattern-link";
             patternLink.href = `https://www.ravelry.com/patterns/library/${pattern.permalink}`;
-            patternLink.textContent = `"https://www.ravelry.com/patterns/library/"${pattern.permalink}`;
             patternLink.target = "_blank";
-            ravelryPatterns.appendChild(patternLink);
+            patternContainer.appendChild(patternLink);
+            
+            const patternPhoto = document.createElement("img");
+            patternPhoto.className = "pattern-photo";
+            patternPhoto.src = `${pattern.first_photo.medium_url}`;
+            patternPhoto.alt = `${pattern.name}`;
+            patternLink.appendChild(patternPhoto);
+
+            const patternName = document.createElement("h4");
+            patternName.className = "pattern-name";
+            patternName.textContent = `${pattern.name} by ${pattern.pattern_author.name}`;
+            patternLink.appendChild(patternName);
+        
+            ravelryPatterns.appendChild(patternContainer);
 
         })
  

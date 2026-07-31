@@ -3,26 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="public/css/reset.css" />
     <link rel="stylesheet" href="public/css/home.css" />
-    
+
     <title>Track the Thread</title>
   </head>
   <body>
     <header class="header">
-      <h1>Track the Thread</h1>
-      <p class="header-description">
-        Keep track of your knitting/crochet pattern progress with Track the Thread! This website allows you to take note of your pattern's fiber type, yarn weight, needle size, etc. through projects entries. Take your pattern notes on-the-go with Track the Thread today!
+      <img
+        class="header-logo"
+        src="public/images/TTTLogo.svg"
+        alt=""
+        Track
+        the
+        Thread
+        Logo
+      />
+      <h1>Keep track<br>of your progress</h1>
+      <p>
+        Take note of your pattern's fiber type, yarn weight, needle size, and
+        more through our project entries!
       </p>
-      <a href="about.html">Learn More</a>
+      <section class="header-grid">
+        <figure class="header-pics">
+          <img src="public/images/homepage1.jpg" alt="Gauge Swatch Photo" />
+          <figcaption>Gauge Swatch</figcaption>
+        </figure>
+        <figure class="header-pics">
+          <img src="public/images/homepage3.jpg" alt="Yarn Fiber Photo" />
+          <figcaption>Pattern Yarn Fiber</figcaption>
+        </figure>
+        <figure class="header-pics">
+          <img src="public/images/homepage2.jpg" alt="Needle Size Photo" />
+          <figcaption>Project Needle Size</figcaption>
+        </figure>
+      </section>
     </header>
     <main class="main-section">
-      <button id="return-profile">Login</button>
-      <p>New to Track the Thread?</p>
-      <button onclick="document.location = 'profile.html'">Get Started</button>
+      <button class="get-started" onclick="document.location = 'profile.html'">Get Started</button>
+      <button class="return-profile" id="return-profile">Login</button>
     </main>
     <footer class="footer">
       <div class="footer-group">

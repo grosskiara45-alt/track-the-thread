@@ -11,7 +11,7 @@ async function fetchPopularPatterns(){
         console.log(`Authenticating with Username length: ${username.length}, Password length: ${password.length}`);
 
         const auth = 'Basic ' + Buffer.from(`${username}:${password}`).toString("base64");
-        const ravelryURL = `https://api.ravelry.com/patterns/search.json?sort=recently-popular&page_size=10`;
+        const ravelryURL = `https://api.ravelry.com/patterns/search.json?sort=recently-popular&page_size=6`;
 
         const res = await fetch(ravelryURL, {
             method: "GET",
