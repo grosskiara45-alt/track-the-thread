@@ -44,7 +44,7 @@ function renderProjects() {
             const projectLink = document.createElement("a");
             projectLink.className = "project-link";
             projectLink.href ="#";
-            projectLink.textContent = `${project.projectTitle} ${project.currentDate}`;
+            projectLink.textContent = `${project.projectTitle}`;
 
             projectLink.addEventListener('click',(event) =>{
                 event.preventDefault();
@@ -64,9 +64,9 @@ function renderProjects() {
             });
 
             projectRow.append(projectLink);
+            projectRow.append(deleteButton);
 
             projectContainer.append(projectRow);
-            projectContainer.append(deleteButton);
         });
     } 
 }

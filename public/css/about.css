@@ -5,9 +5,67 @@ body {
     margin: 0 auto;
     box-sizing: border-box;
     width: 100%;
+    font-size: 1rem;
     /* Font Styles: Thin 100,ExtraLight 200, Light 300, Regular 400, 
     Medium 500, SemiBold 600, Bold 700, ExtraBold 800, Black 900,
     Thin 100 Italic, ExtraLight 200 Italic, Light 300 Italic,
     Regular 400 Italic, Medium 500 Italic, SemiBold 600 Italic,
     Bold 700 Italic, ExtraBold 800 Italic, Black 900 Italic */
+    background-color: #C8EEFF;
+    color: #033E8C;
+}
+
+.nav-bar{
+    display: flex;
+    padding: 2rem;
+    justify-content: space-evenly;
+    background-color: white;
+    font-weight: 700;
+    color: #0275DC;
+    width: 100%;
+} 
+
+.nav-bar a{
+    display: block;
+}
+
+.projects-link{
+    color: #033E8C;
+}
+
+.header{
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+.main-section{
+    padding-top: .5rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.about-me{
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.about-title{
+    text-align: center;
+}
+
+p, ul{
+    font-size: .9rem;
+}
+
+.footer{
+    display: none;
 }

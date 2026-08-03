@@ -191,19 +191,19 @@ function renderProjects() {
             const projectLink = document.createElement("a");
             projectLink.className = "project-link";
             projectLink.href ="#";
-            projectLink.textContent = `${project.projectTitle} ${project.currentDate}`;
+            projectLink.textContent = `${project.projectTitle}`;
 
             projectLink.addEventListener('click',(event) =>{
                 event.preventDefault();
                 loadProjectForm(project);
-                projectHeader(project.projectTitle);
             });
 
             const deleteButton = document.createElement("button");
             deleteButton.type = "button";
             deleteButton.textContent = "X";
+            deleteButton.className = "delete-btn";
 
-            deleteButton.addEventListener('click', (event) => {
+            deleteButton.addEventListener('click', (event) =>{
                 const confirmDelete = confirm("Are you sure you would like to remove this project entry?");
                 if (confirmDelete) {
                     deleteProjectForm(project.id);

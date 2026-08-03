@@ -12,9 +12,9 @@
   </head>
   <body>
     <nav class="nav-bar">
-      <a href="dashboard.html">Dashboard</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
+      <a class="dashboard-link" href="dashboard.html">Dashboard</a>
+      <a class="projects-link" href="projects.html">Projects</a>
+      <a class="about-link" href="about.html">About</a>
     </nav>
     <header class="header">
       <span id="project-header"></span>
@@ -25,25 +25,25 @@
           <legend>Project Details</legend>
 
           <div class="form-group">
-            <label for="project-title">Project Title: </label><br />
+            <label for="project-title">Title: </label>
             <input
               type="text"
               id="project-title"
               name="project-title"
               value="New Project"
               required
-            /><br />
+            />
             <span class="error-message" id="project-title-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="current-date">Date: </label><br />
+            <label for="current-date">Date: </label>
             <input
               type="date"
               id="current-date"
               name="current-date"
               required
-            /><br />
+            />
             <span class="error-message" id="current-date-error"></span>
           </div>
 
@@ -65,43 +65,43 @@
               id="loom-knitting"
               value="loom-knitting"
               name="craft"
-            /><br />
+            />
             <span class="error-message" id="craft-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="pattern-link">Upload Pattern Link</label><br />
-            <input type="url" id="pattern-link" name="pattern-link" /><br />
+            <label for="pattern-link">Pattern Link:</label>
+            <input type="url" id="pattern-link" name="pattern-link" />
             <span class="error-message" id="pattern-link-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="fiber-type">Fiber Type (up to 20 characters)</label><br />
-            <input type="text" id="fiber-type" name="fiber-type" maxlength="20"/><br />
+            <label for="fiber-type">Fiber Type:</label>
+            <input type="text" id="fiber-type" name="fiber-type" maxlength="20"/>
             <span class="error-message" id="fiber-type-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="yarn-weight">Yarn Weight (up to 20 characters)</label><br />
-            <input type="text" id="yarn-weight" name="yarn-weight" maxlength="20"/><br />
+            <label for="yarn-weight">Yarn Weight:</label>
+            <input type="text" id="yarn-weight" name="yarn-weight" maxlength="20"/>
             <span class="error-message" id="yarn-weight-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="needle-size">Needle Size</label><br />
-            <input type="text" id="needle-size" name="needle-size"/><br />
+            <label for="needle-size">Needle Size:</label>
+            <input type="text" id="needle-size" name="needle-size"/>
             <span class="error-message" id="needle-size-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="project-fit">Age/Size/Fit (up to 20 characters)</label><br />
-            <input type="text" id="project-fit" name="project-fit" maxlength="20"/><br />
+            <label for="project-fit">Age/Size/Fit:</label>
+            <input type="text" id="project-fit" name="project-fit" maxlength="20"/>
             <span class="error-message" id="project-fit-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="row-tracker">Row Tracker</label><br />
-            <input type="number" id="row-tracker" name="row-tracker" /><br />
+            <label for="row-tracker">Row Tracker:</label>
+            <input type="number" id="row-tracker" name="row-tracker" />
             <span class="error-message" id="row-tracker-error"></span>
           </div>
         </fieldset>
@@ -109,7 +109,7 @@
           <legend>Project Notes</legend>
 
           <div class="form-group">
-            <label for="project-notes">Notes (up to 250 characters)</label><br />
+            <label for="project-notes">Notes (up to 250 characters):</label>
             <textarea
               id="project-notes"
               name="project-notes"
@@ -122,10 +122,12 @@
           </div>
           </div>
         </fieldset>
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
+        <div class="form-btns">
+          <button class="submit" type="submit" name="submit">Submit</button>
+        <button class="reset" type="reset" name="reset">Reset</button>
+        </div>
       </form>
-      <h3>Saved Projects</h3>
+      <h3 class="saved-title">Saved Projects</h3>
       <div id="project-links-container"></div>
     </main>
     <footer class="footer"> 

@@ -17,6 +17,9 @@ As a knitter myself, taking notes while working through different patterns helps
 |**Project Page**||
 |**About Page**||
 
+## Prerequsities
+Before running this project, ensure you have the following installed:
+
 ## How to Run the Project
 
 ## Updates
@@ -47,4 +50,15 @@ Implement JS code for fetching Ravelry API data, and displaying collected data o
 **07/31/2026**
 Finalized color palette and font stack. Researched inspiration for web app design on Behance. Revised HTML to match Affinity Sketches. Designed sketches for CSS layout of each page using Affinity. Began to implement CSS code.
 
-## Credits
+**08/03/2026**
+Continued implementing CSS code for mobile version. Tested JS features with CSS and HTML changes. Researched crediting API and other used resources. Researched writing steps for user to install and run this project.
+
+## Licenses and Credits
+Ravelry API: This product uses the <a href="https://www.ravelry.com/api#index">Ravelry API</a> but is not endorsed or certified by Ravelry.
+
+Google Fonts: Poppins by Indian Type Foundry via <a href="https://fonts.google.com/specimen/Poppins">Google Fonts</a>.
+
+Images:
+- Photo by <a href="https://unsplash.com/@kuzmao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alevtina Nalevo</a> on <a href="https://unsplash.com/photos/a-pair-of-socks-tRWFmJBdXzQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- Photo by <a href="https://unsplash.com/@budetsvyazano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Marina Ermakova</a> on <a href="https://unsplash.com/photos/person-holding-blue-and-white-yarn-M0-gDti0RYM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- Photo by <a href="https://unsplash.com/@joony?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JOONY</a> on <a href="https://unsplash.com/photos/green-white-and-yellow-knit-textile-VleAEtGmQH0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

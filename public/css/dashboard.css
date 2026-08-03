@@ -66,21 +66,29 @@ body {
     margin-top: 1rem;
 }
 
+.saved-title{
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+
 .project-row{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+
+.project-link{
     background-color: #0275DC;
     padding: 8px;
     color: white;
     border-radius: 8px;
+    justify-content: center;
+    flex: 5;
     text-align: center;
-}
-
-.project-links-container{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.project-link{
-
 }
 
 .delete-btn{
@@ -88,8 +96,8 @@ body {
     padding: 8px;
     color: white;
     border-radius: 8px;
-    text-align: center;
-
+    justify-content: center;
+    flex:1;
 }
 
 .ravelry-patterns {
