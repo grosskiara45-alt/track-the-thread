@@ -1,126 +1,364 @@
 body {
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    margin: 0 auto;
-    box-sizing: border-box;
-    width: 100%;
-    font-size: 1rem;
-    /* Font Styles: Thin 100,ExtraLight 200, Light 300, Regular 400, 
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1rem;
+  /* Font Styles: Thin 100,ExtraLight 200, Light 300, Regular 400, 
     Medium 500, SemiBold 600, Bold 700, ExtraBold 800, Black 900,
     Thin 100 Italic, ExtraLight 200 Italic, Light 300 Italic,
     Regular 400 Italic, Medium 500 Italic, SemiBold 600 Italic,
     Bold 700 Italic, ExtraBold 800 Italic, Black 900 Italic */
-    background-color: #C8EEFF;
-    color: #033E8C;
+  background-color: #c8eeff;
+  color: #033e8c;
 }
 
-.nav-bar{
-    display: flex;
-    padding: 2rem;
-    justify-content: space-evenly;
-    background-color: white;
-    font-weight: 700;
-    color: #0275DC;
-    width: 100%;
-} 
-
-.nav-bar a{
-    display: block;
+.nav-bar {
+  display: flex;
+  padding: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  font-weight: 700;
+  color: #0275dc;
+  width: 100%;
 }
 
-.dashboard-link{
-    color: #033E8C;
+.nav-bar a {
+  display: block;
 }
 
-.header{
-    margin-top: 2rem;
-    margin-bottom: .5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    align-items: center;
-    text-align: center;
+.dashboard-link {
+  color: #033e8c;
 }
 
-.main-section{
-    padding-top: .5rem;
-    padding-bottom: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.header {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  align-items: center;
+  text-align: center;
 }
 
-.add-btn{
-    background-color: #033E8C;
-    padding: 8px;
-    color: white;
-    border-radius: 8px;
-    justify-content: center;
-    text-align: center;
-
+.main-section {
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+  justify-content: space-evenly;
 }
 
-.ravelry-title{
-    margin-top: 1rem;
+.add-btn {
+  background-color: #033e8c;
+  padding: 8px;
+  color: white;
+  border-radius: 8px;
+  justify-content: center;
+  text-align: center;
 }
 
-.saved-title{
-    margin-top: 1rem;
-    margin-bottom: .5rem;
+.top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-.project-row{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 1rem;
-    box-sizing: border-box;
-    margin-top: 1rem;
+.goals-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  width: 100%;
+}
+.goals-form label {
+  color: #033e8c;
+  padding: 5px;
+}
+.goals-form input {
+  background-color: #e2f6ff;
+  padding: 5px;
+  color: #033e8c;
+  field-sizing: content;
 }
 
-.project-link{
-    background-color: #0275DC;
-    padding: 8px;
-    color: white;
-    border-radius: 8px;
-    justify-content: center;
-    flex: 5;
-    text-align: center;
+input::placeholder {
+  color: #033e8c;
+  opacity: 0.5;
 }
 
-.delete-btn{
-    background-color: #79BFFC;
-    padding: 8px;
-    color: white;
-    border-radius: 8px;
-    justify-content: center;
-    flex:1;
+input[type="text"] {
+  flex: 2;
+}
+
+fieldset {
+  border: 0;
+  width: 100%;
+}
+
+legend {
+  font-weight: 600;
+  padding: 5px;
+  font-size: 0.7rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.form-btns {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.submit {
+  background-color: #033e8c;
+  padding: 8px;
+  color: white;
+  border-radius: 8px;
+  width: 40%;
+  justify-content: center;
+}
+
+.reset {
+  background-color: #0275dc;
+  padding: 8px;
+  color: white;
+  border-radius: 8px;
+  width: 40%;
+  justify-content: center;
+}
+
+.ravelry-title {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.saved-projects {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.saved-title {
+  text-align: center;
+}
+
+.project-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.project-link {
+  background-color: #0275dc;
+  padding: 8px;
+  color: white;
+  border-radius: 8px;
+  justify-content: center;
+  flex: 5;
+  text-align: center;
+}
+
+.delete-btn {
+  background-color: #79bffc;
+  padding: 8px;
+  color: white;
+  border-radius: 8px;
+  justify-content: center;
+  flex: 1;
 }
 
 .ravelry-patterns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    width: 100%;
-    padding: 0.5rem;
-    box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
 
-.pattern-box{
-    width: 45%;
+.pattern-box {
+  width: 45%;
+  border-radius: 8px;
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+}
+
+.ravelry-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.ravelry-box h3 {
+  margin-top: 1rem;
+}
+
+.pattern-photo {
+  width: 20rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.error-message {
+  color: red;
+}
+
+.footer {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .top-section {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .saved-projects {
+    flex: 2;
+    text-align: center;
+  }
+  .goals-form {
     background-color: white;
-    padding: 1rem;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+  }
+  .goals-form label {
+    color: #033e8c;
+    padding: 5px;
+  }
+
+  fieldset {
+    border: 0;
+  }
+
+  legend {
+    font-weight: 600;
+    padding: 5px;
+    font-size: 0.7rem;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .form-btns {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .submit {
+    background-color: #033e8c;
+    padding: 8px;
+    color: white;
+    border-radius: 8px;
+    width: 40%;
+    justify-content: center;
+  }
+
+  .reset {
+    background-color: #0275dc;
+    padding: 8px;
+    color: white;
+    border-radius: 8px;
+    width: 40%;
+    justify-content: center;
+  }
+
+  .ravelry-title {
+    text-align: center;
+  }
+
+  .ravelry-patterns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ravelry-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .ravelry-box h3 {
+    margin-top: 1rem;
+  }
+
+  .pattern-box {
+    width: 15%;
     border-radius: 8px;
     box-sizing: border-box;
     justify-content: center;
     text-align: center;
-}
+  }
 
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 2rem;
+    gap: 20px;
+  }
 
-.footer{
-    display: none;
+  .footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-socials h4 {
+    width: 100%;
+  }
+
+  .footer-overview a {
+    text-decoration: underline;
+  }
 }

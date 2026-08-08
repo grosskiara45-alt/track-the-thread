@@ -76,9 +76,21 @@ body {
     color: #033E8C;
 }
 
+.profile-form textarea{
+    background-color: #E2F6FF;
+    padding: 5px;
+    color: #033E8C;
+    width: 100%;
+}
+
 input::placeholder {
   color: #033E8C;
   opacity: .5;
+}
+
+textarea::placeholder{
+    color: #033E8C;
+    opacity: .5; 
 }
 
 #fname{
@@ -87,4 +99,35 @@ input::placeholder {
 
 #lname{
     width: 100%;
+}
+
+.footer{
+    display: none;
+  }
+
+@media screen and (min-width: 768px) {
+  .footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 2rem;
+    gap: 20px;
+  }
+
+  .footer-socials{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-socials h4{
+    width: 100%;
+  }
+
+  .footer-overview a{
+    text-decoration: underline;
+  }
 }

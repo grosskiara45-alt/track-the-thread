@@ -1,71 +1,104 @@
 body {
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    margin: 0 auto;
-    box-sizing: border-box;
-    width: 100%;
-    font-size: 1rem;
-    /* Font Styles: Thin 100,ExtraLight 200, Light 300, Regular 400, 
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1rem;
+  /* Font Styles: Thin 100,ExtraLight 200, Light 300, Regular 400, 
     Medium 500, SemiBold 600, Bold 700, ExtraBold 800, Black 900,
     Thin 100 Italic, ExtraLight 200 Italic, Light 300 Italic,
     Regular 400 Italic, Medium 500 Italic, SemiBold 600 Italic,
     Bold 700 Italic, ExtraBold 800 Italic, Black 900 Italic */
-    background-color: #C8EEFF;
-    color: #033E8C;
+  background-color: #c8eeff;
+  color: #033e8c;
 }
 
-.nav-bar{
-    display: flex;
-    padding: 2rem;
-    justify-content: space-evenly;
-    background-color: white;
-    font-weight: 700;
-    color: #0275DC;
-    width: 100%;
-} 
-
-.nav-bar a{
-    display: block;
+.header {
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  align-items: center;
+  text-align: center;
 }
 
-.projects-link{
-    color: #033E8C;
+.main-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  gap: 2rem;
 }
 
-.header{
-    margin-top: 2rem;
-    margin-bottom: .5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    align-items: center;
-    text-align: center;
+.about-project {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.main-section{
-    padding-top: .5rem;
-    padding-bottom: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+.about-me {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+img{
+  display: flex;
+  padding-bottom: 20px;
+}
+
+p,
+ul {
+  font-size: 0.9rem;
+}
+
+.footer {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .main-section {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .about-project {
+    flex: 3;
+  }
+  .about-me {
+    flex: 1;
+  }
+
+  .footer {
     display: flex;
     flex-direction: column;
-    width: 100%;
-}
-
-.about-me{
-    background-color: white;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.about-title{
+    align-items: center;
     text-align: center;
-}
+    margin: 2rem;
+    gap: 20px;
+  }
 
-p, ul{
-    font-size: .9rem;
-}
+  .footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
 
-.footer{
-    display: none;
+  .footer-socials h4 {
+    width: 100%;
+  }
+
+  .footer-overview a {
+    text-decoration: underline;
+  }
 }

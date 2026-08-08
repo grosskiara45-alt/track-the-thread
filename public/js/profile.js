@@ -8,7 +8,7 @@ profileForm.addEventListener('submit', (event) => {
         const profileData = {
             firstname: document.getElementById("fname").value.trim(),
             lastname: document.getElementById("lname").value.trim(),
-            theme:document.querySelector('input[name="theme"]:checked')?.value || 'light'
+            id: Math.random().toString(36).substring(2, 9)
         }
         localStorage.setItem('profile', JSON.stringify(profileData));
 
@@ -29,15 +29,12 @@ profileForm.addEventListener('reset', () => {
 function validateProfileForm() {
     const fName = document.getElementById("fname").value.trim();
     const lName = document.getElementById("lname").value.trim();
-    const selectedTheme = document.querySelector('input[name="theme"]:checked');
 
     const fnameError = document.getElementById("fnameError");
     const lnameError = document.getElementById("lnameError");
-    const themeError = document.getElementById("themeError");
 
     fnameError.textContent = "";
     lnameError.textContent = "";
-    themeError.textContent = "";
 
     let isValid = true;
 
@@ -51,11 +48,6 @@ function validateProfileForm() {
         isValid = false;
     }
 
-    if (selectedTheme === null){
-        themeError.textContent = "Please select your visual preferences";
-        isValid = false;
-    }
-
     return isValid;
 }
 
@@ -63,5 +55,5 @@ function validateProfileForm() {
 function resetProfileErrors() {
     document.getElementById("fnameError").textContent = "";
     document.getElementById("lnameError").textContent = "";
-    document.getElementById("themeError").textContent = "";
+
 }

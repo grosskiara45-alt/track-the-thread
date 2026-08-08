@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <a class="dashboard-link" href="dashboard.html">Dashboard</a>
+      <a class="projects-link" href="projects.html">Projects</a>
+      <a class="about-link" href="about.html">About</a>
+    </nav>
+    <header class="header">
+      <h1 id="welcome-header"></h1>
+    </header>
+    <main class="main-section">
+      <a href="projects.html" class="add-btn">Add New Project</a>
+      <div class="top-section">
+        <form class="goals-form" id="goals-form">
+          <h3>Knitting/Crochet Goals</h3>
+          <fieldset>
+            <legend>
+              "You can't use up creativity. The more you use the more you have."
+              ― Maya Angelou
+            </legend>
+            <div class="form-group">
+              <label for="goal-1">1. </label>
+              <input
+                type="text"
+                id="goal-1"
+                name="goal-1"
+                placeholder="Type goal here"
+              >
+              <span class="error-message" id="goalOneError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="goal-2">2. </label>
+              <input
+                type="text"
+                id="goal-2"
+                name="goal-2"
+                placeholder="Type goal here"
+              >
+              <span class="error-message" id="goalTwoError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="goal-3">3. </label>
+              <input
+                type="text"
+                id="goal-3"
+                name="goal-3"
+                placeholder="Type goal here"
+              >
+              <span class="error-message" id="goalThreeError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="goal-4">4. </label>
+              <input
+                type="text"
+                id="goal-4"
+                name="goal-4"
+                placeholder="Type goal here"
+              >
+              <span class="error-message" id="goalFourError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="goal-5">5. </label>
+              <input
+                type="text"
+                id="goal-5"
+                name="goal-5"
+                placeholder="Type goal here"
+              >
+              <span class="error-message" id="goalFiveError"></span>
+            </div>
+
+            <div class="form-btns">
+              <button class="submit" type="submit" name="submit">Submit</button>
+              <button class="reset" type="reset" name="reset">Reset</button>
+            </div>
+          </fieldset>
+        </form>
+        <div class="saved-projects">
+          <h3 class="saved-title">Saved Projects</h3>
+          <section id="project-links-container"></section>
+        </div>
+      </div>
+      <div class="ravelry-box">
+        <h3>Trending Ravelry Patterns</h3>
+        <div id="ravelry-patterns" class="ravelry-patterns"></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-overview">
+        <h3>Track the Thread</h3>
+        <p>
+          A responsive web application that allows users to bring their
+          knitting/crochet notes on the go. Users can create project entries to
+          save each project’s pattern, yarn fiber, needle sizes, age/fit/size,
+          and more. This mobile-first website provides users with the trending
+          patterns directly from Ravelry.com by using the Ravelry API. To learn
+          more visit our <a href="about.html">About Page</a>.
+        </p>
+      </div>
+      <div class="footer-socials">
+        <h4>Let's Stay Connected!</h4>
+        <a href="https://www.linkedin.com/in/kiaragross/">LinkedIn</a>
+        <a href="https://github.com/grosskiara45-alt">GitHub</a>
+        <a href="mailto:grosskiara45@gmail.com">Email</a>
+      </div>
+    </footer>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

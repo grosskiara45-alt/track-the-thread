@@ -16,7 +16,18 @@ body {
 }
 
 .header{
-    margin: 2rem;
+    margin: 2rem 2rem 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.header-slideshow{
+    display: none;
+}
+
+.header-text{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,19 +55,18 @@ body {
 .header p{
     font-size: .9rem;
     padding-bottom: 10px;
-
 }
 
 .header-pics{
-    width: 33.3%;
+    flex: 1;
 }
 
 .header-pics img{
     border-radius: 8px;
-    margin-bottom: 10px;;
+    margin-bottom: 10px;
 }
 
-.header figure figcaption{
+.home-gallery figure figcaption{
     background-color: #033E8C;
     padding: 5px;
     color: white;
@@ -65,13 +75,24 @@ body {
 }
 
 .main-section{
-    margin: 0 2rem 2rem 2rem;
+    margin: 1rem 2rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     text-align: center;
     font-size: .9rem;
     gap: 10px;
+}
+
+.home-gallery{
+    margin: 2rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    font-size: .9rem;
+    gap: 10px;
+
 }
 
 .get-started{
@@ -92,4 +113,73 @@ body {
 
 .footer{
     display: none;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr;
+        grid-template-rows: 1fr;
+
+        gap: 1rem;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .header, .main-section{
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .header-grid{
+        display: none;
+    }
+
+    .header-slideshow{
+        display: grid;
+    }
+
+   .header-slide img{
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .left-side{
+        margin: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-section{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer{
+    display: grid;
+    margin: 2rem;
+    grid-column: span 2;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-socials{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-socials h4{
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-overview a{
+    text-decoration: underline;
+  }
 }
