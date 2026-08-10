@@ -19,61 +19,135 @@
     </header>
     <main class="main-section">
       <div class="about-project">
-        <h2>Project Details</h2>
-        <h3>Overview</h3>
-        <p>
-          For the Code:You Web Development pathway, I developed this responsive
-          web application that allows users to track the progress, take notes of
-          their knitting/crochet projects, and receive pattern recommendations
-          from Ravelry.
-        </p>
-        <br />
-        <p>
-          As a knitter myself, taking notes while working through different
-          patterns helps me keep track of my progress, remember which patterns I
-          loved versus could improve, and more. This project addresses the need
-          for an easily-accessible notes-taking application that considers
-          different aspects of knitting/crocheting so that way, users can take
-          notes on their creations.
-        </p>
-        <br />
-        <h3>Features</h3>
-        <ul>
-          <li>
-            <strong
-              >Feature 1: Validate user input and either prevent the invalid
-              input or inform the user about it (in all cases prevent invalid
-              input from being stored or saved) :</strong
-            >Description Here
-          </li>
-          <br />
-          <li>
-            <strong
-              >Feature 2: Persist important data to the user to local storage
-              and make the stored data accessible in your app. (including after
-              reload/refresh): </strong
-            >Description Here
-          </li>
-          <br />
-          <li>
-            <strong
-              >Feature 3: Analyze data that is stored in arrays, objects, sets
-              or maps and display information about it in your app: </strong
-            >Description Here
-          </li>
-        </ul>
-        <br />
-        <h3>Project Organization</h3>
-        <br />
-        <!-- Table from README Here -->
-        <h3>Walkthrough Video</h3>
-        <br />
-        <p></p>
-        <br />
-        <h3>Licenses and Credit</h3>
-        <br />
-        <p></p>
-        <br />
+        <div class="project-overview">
+          <h2>Project Details</h2>
+          <h3>Overview</h3>
+          <p>
+            For the Code:You Web Development pathway, I developed this
+            responsive web application that allows users to track the progress,
+            take notes of their knitting/crochet projects, and receive pattern
+            recommendations from Ravelry.
+          </p>
+        </div>
+        <div class="project-org">
+          <h3>Project Organization</h3>
+
+          <table>
+            <tr>
+              <th>Page</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>Welcome Page</td>
+              <td>
+                Provides users an overview of Track the Thread and what to
+                expect from the application.
+              </td>
+            </tr>
+            <tr>
+              <td>Create Profile Page</td>
+              <td>
+                Users provide their first and last name to create their Track
+                the Thread profile.
+              </td>
+            </tr>
+            <tr>
+              <td>Dashboard Page</td>
+              <td>
+                Users can create a new project entry, list out their
+                knitting/crochet goals, view their previously saved projects,
+                and explore trending Ravelry patterns.
+              </td>
+            </tr>
+            <tr>
+              <td>Project Page</td>
+              <td>
+                Users track their project details such as yarn fiber, needle
+                sizes, etc. as well as additional notes about their project.
+                Once the entry is saved, they are able to access it in the Saved
+                projects section.
+              </td>
+            </tr>
+            <tr>
+              <td>About Page</td>
+              <td>
+                Users can learn more about the coding behind Track the Thread
+                and the creator of the web application. This page includes a
+                general project overview as well as a video walkthrough.
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="project-vid">
+          <h3>Walkthrough Video</h3>
+          <video class="walkthrough" controls>
+            <source src="" type="video/">
+            <source src="" type="video/">
+          Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="project-cred">
+          <h3>Licenses and Credit</h3>
+          <ul>
+            <li>
+              Ravelry API: This product uses the
+              <a href="https://www.ravelry.com/api#index" target="_blank"
+                >Ravelry API</a
+              >
+              but is not endorsed or certified by Ravelry.
+            </li>
+            <li>
+              Google Fonts: Poppins by Indian Type Foundry via
+              <a
+                href="https://fonts.google.com/specimen/Poppins"
+                target="_blank"
+                >Google Fonts</a
+              >.
+            </li>
+            <li>
+              Photo by
+              <a
+                href="https://unsplash.com/@kuzmao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank"
+                >Alevtina Nalevo</a
+              >
+              on
+              <a
+                href="https://unsplash.com/photos/a-pair-of-socks-tRWFmJBdXzQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank"
+                >Unsplash</a
+              >
+            </li>
+            <li>
+              Photo by
+              <a
+                href="https://unsplash.com/@budetsvyazano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank"
+                >Marina Ermakova</a
+              >
+              on
+              <a
+                href="https://unsplash.com/photos/person-holding-blue-and-white-yarn-M0-gDti0RYM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank"
+                >Unsplash</a
+              >
+            </li>
+            <li>
+              Photo by
+              <a
+                href="https://unsplash.com/@joony?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank"
+                >JOONY</a
+              >
+              on
+              <a
+                href="https://unsplash.com/photos/green-white-and-yellow-knit-textile-VleAEtGmQH0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank"
+                >Unsplash</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="about-me">
         <div class="about-title">
@@ -87,7 +161,6 @@
             alt="Kiara Gross Headshot"
           />
           <div class="about-paragraph">
-
             <p>
               Detail-oriented individual leveraging past video production
               experience to build immersive, high-performance web applications.
@@ -98,7 +171,6 @@
             </p>
           </div>
         </div>
-        <br />
       </div>
     </main>
     <footer class="footer">

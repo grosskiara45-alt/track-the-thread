@@ -33,12 +33,46 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
   gap: 2rem;
+  font-size: .9rem;
 }
 
 .about-project {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
+}
+
+.project-overview{
+  margin-bottom: 1rem;
+}
+.project-org{
+  margin-bottom: 1rem;
+}
+
+.project-org table, th, td{
+  margin-top: .5rem;
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 8px;
+  text-align: center;
+}
+.project-vid{
+  margin-bottom: 1rem;
+}
+
+.walkthrough{
+  width: 320px;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.project-cred{
+  margin-bottom: 1rem;
+}
+
+.project-cred ul, li{
+  list-style-type: circle;
+  list-style-position: inside;
 }
 
 .about-me {
@@ -48,16 +82,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: fit-content;
 }
+
 
 img{
   display: flex;
   padding-bottom: 20px;
-}
-
-p,
-ul {
-  font-size: 0.9rem;
 }
 
 .footer {
@@ -76,6 +107,11 @@ ul {
   .about-me {
     flex: 1;
   }
+
+  .walkthrough{
+  width: 100%;
+  height: auto;
+}
 
   .footer {
     display: flex;

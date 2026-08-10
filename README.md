@@ -4,26 +4,72 @@ Overview:
 As a knitter myself, taking notes while working through different patterns helps me keep track of my progress, remember which patterns I loved versus could improve, and more. This project addresses the need for an easily-accessible notes-taking application that considers different aspects of knitting/crocheting so that way, users can take notes on their creations.
 
 ## Capstone Requirements
-| Requirement | Implementation |
-|-------------|-------------|
-|**Retrieve data from a third-party API:**| • Integrated Ravelry API for users to view trending knitting/crochet Ravelry patterns on dashboard page|
-|**Analyze data that is stored in arrays, objects, sets or maps and display information**||
-|**Validate user input and either prevent the invalid input or inform the user about it**||
-|**Persist important data to the user to local storage and make the stored data accessible**||
-|**Responsive design**||
+- **Retrieve data from a third-party API:** 
+    - Ravelry API: Integrated API from Ravelry, a free community site for knitters/crocheters so users can view trending knitting/crochet Ravelry patterns on dashboard page.
+- **Validate user input and either prevent the invalid input or inform the user about it (in all cases prevent invalid input from being stored or saved):**
+    - Profile Form: The validateProfile function checks that each input is entered. If an input is empty, the form prevents saving and displays an error message.
+    - Goals Form: The validateGoalsForm function checks the format of the optional inputs. If the optional inputs are entered incorrectly, the form prevents saving and displays an error message.
+    - Projects Form: The validateProjectForm function checks the format of the required and optional inputs. If either are entered incorrectly or if the required inputs are not entered, the forms prevent saving and display an error message.
+- **Persist important data to the user to local storage and make the stored data accessible in your app. (including after reload/refresh):**
+    - User Data: Once the profile, goals, and project forms are validated, the users data is saved to local storage as separate objects or within an array.
+- **Analyze data that is stored in arrays, objects, sets or maps and display information about it in your app:**
+    - Profile Data: The Welcome Header parses through the data stored in the saved profile object, checks if the object has a value for the firstname key, retrieves the Welcome Header element, and displays the user’s first name in the header.
+    - Goals Data: The Goals Form parses through the data stored in the savedGoals object, checks the value of each goal key, and displays the saved data in the inputs.
+    - Project Data: The Project Form parses the data stored in the savedPatternProjects array, finds each project by the project id, checks each input for a value, and calls back the saved data on the form and changes the Project Header to correspond.
+    - Saved Projects Data: The Project Form parses through the data stored in the savedPatternProjects array and checks if there are any saved projects. If there are projects saved, it retrieves the project links container, creates elements in the container, and displays a stylized link to each project top-down with a stylized delete button.
+- **Responsive Design:**
+    - Data Visualization: This web application has a polished and professional design with a consistent font stack, color palette, and visual hierarchy. 
+    - Media Queries: This web application is built mobile-first and uses media queries to adjust to different screen sizes.
 
 ## Project Organization
 | Page | Description |
 |------|-------------|
-|**Welcome Page**|Provides an overview of what Track the Thread is and what to expect from using the web application including row tracking, yarn fibers, and needle size.|
-|**Create Profile Page**|Using JavaScript, users enter their first name, last name, and visual preference to create a profile. The form validates the users information to make sure that all required inputs are filled in with the correct data. The information entered is saved to the users’ local storage and then retrieved to display the data on various parts of the site.|
-|**Dashboard Page**|Displays information for users to create a new project entry, access previously saved entries, and explore trending knitting/crochet patterns using JavaScript and the Ravelry API. When users click the add new project button, they are directed to the blank Project page and when they click a saved project, they are redirected to the Project page with the information provided filled in. By clicking on one of the trending patterns, users are directed to the pattern on Ravelry.com.|
-|**Project Page**|Allows users to input information about each of their projects through the Project page form. The form requires each project entry to have a title and date and verifies the data types and length of each optional field. Users can track the pattern link, yarn fiber, yarn weight, needle size, age/fit/size, which row they are on, and additional notes. Once users save the entry to local storage, it is listed in the Saved Projects section to be easily accessed. In the Saved Projects section, users can remove entries.|
-|**About Page**|Provides users with an in-depth overview of the web application that includes the project overview, features, organization, a walkthrough video, and licenses/credit. On this page, there is a section that discusses the creator as well.|
+|**Welcome Page**|Provides users an overview of Track the Thread and what to expect from the application.|
+|**Create Profile Page**|Users provide their first and last name to create their Track the Thread profile.|
+|**Dashboard Page**|Users can create a new project entry, list out their knitting/crochet goals, view their previously saved projects, and explore trending Ravelry patterns.|
+|**Project Page**|Users track their project details such as yarn fiber, needle sizes, etc. as well as additional notes about their project. Once the entry is saved, they are able to access it in the Saved projects section.|
+|**About Page**|Users can learn more about the coding behind Track the Thread and the creator of the web application. This page includes a general project overview as well as a video walkthrough.|
 
 ## Prerequsities
+Before installing the application, you’ll need to obtain the Ravelry API key:
+1. **Create a Standard Ravelry account:** If you do not have a Ravelry account, sign up at https://www.ravelry.com/ and log in.
+2. **Register as a Developer:** Once you have your account, go to the Ravelry Developer Portal at https://www.ravelry.com/pro/developer. You will be prompted to sign up for a Pro/Developer account.
+3. **Read the Ravelry API Documentation:** Before creating your application, read the documentation. For this website, we will be using the Basic Authorization, read only access.
+4. **Create a New Application:** On the Developer dashboard page, click “Create an App” and fill in the basic information about your project:
+    - App Name: Track the Thread
+    - Description: Knitting Journal web application
+    - Permission/Type: Read-Only access
+5. **Retrieve Your Credentials:** After submitting the form, Ravelry will generate your keys that you will use to create an .env file.
 
 ## How to Run the Project
+1. **Clone the repository using GIT**
+``` bash
+git clone https://github.com/grosskiara45-alt/track-the-thread.git
+```
+2. **Navigate to the project directory**
+``` bash
+cd track-the-thread
+```
+3. **Install dependencies**
+``` bash
+npm install
+```
+4. **Create environment variables file**
+Create a file named `.env` in the project root director with the following content:
+```env
+PORT = 3000
+RAVELRY_USER = your_app_username
+RAVELRY_KEY = your_app_password
+```
+5. **Start the server**
+``` bash
+npm run dev
+```
+6. **Access the application**
+```bash
+http://localhost:3000
+```
+
 
 ## Updates
 **06/15/2026**
@@ -62,6 +108,9 @@ Implemented media queries for all pages. Fix bug with 'Get Started' button.
 
 **08/07/2026**
 Removed visual preferences from profile options (will add back in the future). Added knitting.crochet goals form to dahsboard that saves to the storeUser array of objects. Implemented footer HTML/CSS code to all pages as desktop version. Fix bugs with Project form validation. Revised css on all pages. Continued writing README.md.
+
+**08/10/2026**
+Continued writing READMe and testing functionality. Added content to About Page. Continued adjusting CSS. 
 
 ## Licenses and Credits
 Ravelry API: This product uses the <a href="https://www.ravelry.com/api#index">Ravelry API</a> but is not endorsed or certified by Ravelry.

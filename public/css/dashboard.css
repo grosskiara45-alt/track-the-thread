@@ -169,6 +169,8 @@ legend {
   justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
   box-sizing: border-box;
 }
 
