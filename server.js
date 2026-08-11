@@ -18,6 +18,8 @@ app.use(express.static("./public"));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+
+// Google Gemini assisted with troubleshooting the code below specifically with implementing the correct port number
 app.get("/api/patterns/search.json", async (request, response) => {
     try {
         const patterns = await fetchPopularPatterns();

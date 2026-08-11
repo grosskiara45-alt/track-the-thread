@@ -112,6 +112,12 @@ Removed visual preferences from profile options (will add back in the future). A
 **08/10/2026**
 Continued writing READMe and testing functionality. Added content to About Page. Continued adjusting CSS. 
 
+**08/11/2026**
+Removed placeholder for future walkthrough video. Added in AI usage comments and README section. Tested site and presented in the final class.
+
+## AI Usage
+Google Gemini assisted in identifying and resolving bugs in my code for fetching my Ravelry API. I used these interactions to better understand the issues with my written and the best security practices. The code that Google Gemini assisted with is marked in the file comments.
+
 ## Licenses and Credits
 Ravelry API: This product uses the <a href="https://www.ravelry.com/api#index">Ravelry API</a> but is not endorsed or certified by Ravelry.
 

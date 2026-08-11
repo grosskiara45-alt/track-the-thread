@@ -96,7 +96,6 @@ body {
   background-color: #e2f6ff;
   padding: 5px;
   color: #033e8c;
-  field-sizing: content;
 }
 
 input::placeholder {

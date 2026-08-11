@@ -1,3 +1,5 @@
+// Google Gemini assisted with troubleshooting the bugs within this file specifically with the authorization for the API
+
 const username = (process.env.RAVELRY_USER || '').trim();
 const password = (process.env.RAVELRY_KEY || '').trim();
 
